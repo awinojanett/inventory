@@ -1,6 +1,6 @@
 
 <?php
-include '../users/connection.php'
+include '../user/connection.php'
 ?>
 
 <!DOCTYPE html>

@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-include '../users/connection.php';
+include '../user/connection.php';
 
 $id=$_GET["id"];
 $firstname="";
@@ -9,11 +9,11 @@ $username="";
 $password="";
 $status="";
 $role="";
-$res=mysqli_query($conn, "SELECT * FROM user_registration WHERE id = $id");
+$res=mysqli_query($conn,"SELECT * FROM user_registration WHERE id = $id");
 while($row=mysqli_fetch_array($res))
 {
   $firstname=$row["firstname"];
-  $lastname=$row["lasttname"];
+  $lastname=$row["lastname"];
   $username=$row["username"];
   $status=$row["status"];
   $role=$row["role"];
@@ -42,41 +42,41 @@ while($row=mysqli_fetch_array($res))
             <div class="control-group">
               <label class="control-label">First Name :</label>
               <div class="controls">
-                <input type="text" class="span10" placeholder="First name" name = "firstname" value = <?php echo $firstname; ?>/>
+                <input type="text" class="span10" placeholder="First name" name = "firstname" value = "<?php echo $firstname; ?>"/>
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">Last Name :</label>
               <div class="controls">
-                <input type="text" class="span10" placeholder="Last name" name = "lastname"value = <?php echo $lastname; ?>/>
+                <input type="text" class="span10" placeholder="Last name" name = "lastname" value = "<?php echo $lastname; ?>"/>
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">Username</label>
               <div class="controls">
-                <input type="text"  class="span10" placeholder="Username" name = "username" readonly value = <?php echo $username; ?>/>
+                <input type="text"  class="span10" placeholder="Username" name = "username" readonly value = "<?php echo $username; ?>"/>
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">Password:</label>
               <div class="controls">
-                <input type="password" class="span10" placeholder="Enter Password" name = "password" value = <?php echo $password; ?>/>
+                <input type="password" class="span10" placeholder="Enter Password" name = "password" value = "<?php echo $password; ?>"/>
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">Select Role :</label>
               <div class="controls">
               <select name = "role" class = "span10">
-                    <option>Admin</option>
-                    <option>User</option>
+                    <option <?php if($role=="admin"){echo "selected";} ?>>admin</option>
+                    <option <?php if($role=="user"){echo "selected"; }?>>user</option>
                 </select>  
               </div>
               <div class="control-group">
               <label class="control-label">Select Status :</label>
               <div class="controls">
-              <select name = "role" class = "span10">
-                    <option>Active</option>
-                    <option>Inactive</option>
+              <select name = "status" class = "span10">
+                    <option <?php if($status=="active"){echo "selected";} ?>>active</option>
+                    <option <?php if($status=="inactive"){echo "selected";} ?>>inactive</option>
                 </select>  
               </div>
             <div class="form-actions">
@@ -98,7 +98,21 @@ while($row=mysqli_fetch_array($res))
     </div>
 </div>
 
-<!--end-main-container-part-->
+<?php
+if(isset($_POST["submit1"]))
+{
+  mysqli_query($conn,"UPDATE user_registration SET firstname='$_POST[firstname]',lastname='$_POST[lastname]',password='$_POST[password]',role='$_POST[role]', status='$_POST[status]'WHERE id=$id") or die(mysqli_error($conn));
+}
+ 
+?>
+  <script type = "text/javascript">
+        document.getElementById("success").style.display = "block";
+        setTimeout(function() {
+        document.getElementById("success").style.display = "none";
+        window.location = "add-user.php";
+        }, 3000);
+    </script>  
+
 
 <?php
 include 'footer.php';

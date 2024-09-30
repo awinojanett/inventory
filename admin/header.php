@@ -53,6 +53,15 @@
         <li>
             <a href="add-user.php"><i class="icon icon-user"></i><span>Add New User</span></a>
         </li>
+        <li>
+            <a href="add-new-unit.php"><i class="icon icon-user"></i><span>Add New Unit</span></a>
+        </li>
+        <li>
+            <a href="add-product.php"><i class="icon icon-user"></i><span>Add New Product</span></a>
+        </li>
+        <li>
+            <a href="add-product.php"><i class="icon icon-user"></i><span>Add New Purchase</span></a>
+        </li>
 
         <li class="submenu"><a href="#"><i class="icon icon-th-list"></i> <span>Forms</span> <span
                 class="label label-important">3</span></a>
