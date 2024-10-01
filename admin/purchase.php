@@ -40,56 +40,17 @@ include '../user/connection.php';
                 <input type="text"  class="span10" placeholder="Supplier" name = "supplier" />
               </div>
             </div>
-              <div class="alert alert-danger" id="error" style = "display:none">
-            This product already exists. Please try another.
-            </div>
             <div class="form-actions">
               <button type="submit" name = "submit1" class="btn btn-success">Save</button>
             </div>
             <div class="alert alert-success" id="success" style = "display:none">
-            Record inserted successfully!
+            Purchase inserted successfully!
             </div>
           </form>
         </div>
 
 
       </div>
-
-
-      <div class="widget-content nopadding">
-            <table class="table table-bordered table-striped">
-              <thead>
-                <tr>
-                  <th>Product Name</th>
-                  <th>Unit</th>
-                  <th>Supplier</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-
-              <?php
-              $res=mysqli_query($conn, "SELECT * FROM products_tbl");
-              while($row=mysqli_fetch_array($res))
-              {
-                ?>
-                <tr>
-                  <td><?php echo $row["product_name"]; ?></td>
-                  <td><?php echo $row["unit"]; ?></td>
-                  <td><?php echo $row["suppplier"]; ?></td>
-                  <td><a href="edit-product.php?id=<?php echo $row["id"]; ?>">Edit</a></td>
-                  <td><a href="delete-product.php?id=<?php echo $row["id"]; ?>">Delete</a></td>
-                </tr>
-                <?php
-
-              }
-
-              ?>
-                
-              </tbody>
-            </table>
-          </div>
     </div>
     </div>
 </div>

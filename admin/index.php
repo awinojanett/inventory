@@ -58,7 +58,7 @@ include '../user/connection.php'
         {
             ?>
     <script type = "text/javascript">
-        window.location="header.php";
+        window.location="dashboard.php";
 
     </script> 
             <?php       

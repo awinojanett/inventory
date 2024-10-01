@@ -48,7 +48,7 @@
 <div id="sidebar">
     <ul>
         <li class="active">
-            <a href="index.html"><i class="icon icon-home"></i><span>Dashboard</span></a>
+            <a href="dashboard.php"><i class="icon icon-home"></i><span>Dashboard</span></a>
         </li>
         <li>
             <a href="add-user.php"><i class="icon icon-user"></i><span>Add New User</span></a>
@@ -60,7 +60,7 @@
             <a href="add-product.php"><i class="icon icon-user"></i><span>Add New Product</span></a>
         </li>
         <li>
-            <a href="add-product.php"><i class="icon icon-user"></i><span>Add New Purchase</span></a>
+            <a href="purchase.php"><i class="icon icon-user"></i><span>Purchase Master</span></a>
         </li>
 
         <li class="submenu"><a href="#"><i class="icon icon-th-list"></i> <span>Forms</span> <span
