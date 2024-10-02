@@ -39,9 +39,37 @@ include '../user/connection.php';
               <div class="controls">
                 <input type="text"  class="span10" placeholder="Supplier" name = "supplier" />
               </div>
+              <div class="control-group">
+              <label class="control-label">Enter Qty</label>
+              <div class="controls">
+                <input type="text" name="qty" value="0"class="span10">
+              </div>
+              <div class="control-group">
+              <label class="control-label">Enter Price</label>
+              <div class="controls">
+                <input type="text" name="price" value="0"class="span10">
+              </div>
+              <div class="control-group">
+              <label class="control-label">Select Purchase Type</label>
+              <div class="controls">
+                <select class="span10" name="purchase_type">
+                  <option>Cash</option>
+                  <option>Debit</option>
+              </div>    
+              
+              <div class="control-group">
+              <label class="control-label">Enter Qty</label>
+              <div class="controls">
+                <input type="text" name="qty" value="0"class="span10">
+              </div>
+              <div class="control-group">
+              <label class="control-label">Expiry Date</label>
+              <div class="controls">
+                <input type="text" name="expiry_date" class="span10" placeholder= "YYYY-MM-DD" required pattern "\d{4}-\d{2}-\d{2}">
+              </div>
             </div>
             <div class="form-actions">
-              <button type="submit" name = "submit1" class="btn btn-success">Save</button>
+              <button type="submit" name = "submit1" class="btn btn-success">Purchase Now</button>
             </div>
             <div class="alert alert-success" id="success" style = "display:none">
             Purchase inserted successfully!

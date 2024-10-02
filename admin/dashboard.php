@@ -1,14 +1,4 @@
-<?php
-session_start();
-if(!isset($_SESSION["admin"]))
-{
-    ?>
-    <script type="text/javascript">
-        window.location="index.php";
-    </script>
-    <?php
-}
-?>
+
 <?php
 include 'header.php';
 include '../user/connection.php';
@@ -31,8 +21,25 @@ include '../user/connection.php';
                     <h3 class="card-title text-center">No of Products</h3>
                     <h1 class="card-title text-center">
                         <?php
-                        
+                        $count=0;
+                        $res=mysqli_query($conn, "SELECT * FROM products_tbl");
+                        $count=mysqli_num_rows($res);
+                        echo $count;
+                        ?>
+                    </h1>  
+                </div>
+            </div>
 
+            <div class="card" style="width: 10rem; border-style: solid; border-width: 1px; border-radius: 10px; float: left; margin-left: 5px">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Total Orders</h3>
+                    <h1 class="card-title text-center">
+                        <?php
+                        $count=0;
+                        $res=mysqli_query($conn, "SELECT * FROM products_tbl");
+                        $count=mysqli_num_rows($res);
+                        echo $count;
+                        ?>
                     </h1>  
                 </div>
             </div>

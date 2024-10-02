@@ -62,6 +62,9 @@
         <li>
             <a href="purchase.php"><i class="icon icon-user"></i><span>Purchase Master</span></a>
         </li>
+        <li>
+            <a href="sales.php"><i class="icon icon-user"></i><span>Sales</span></a>
+        </li>
 
         <li class="submenu"><a href="#"><i class="icon icon-th-list"></i> <span>Forms</span> <span
                 class="label label-important">3</span></a>
